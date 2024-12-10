@@ -132,7 +132,7 @@ body{
 .love span:nth-child(4) { animation-delay: 0.3s; }
 
 /* Timeline container */
-.timeline-container {
+.container {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
@@ -218,7 +218,7 @@ body{
 }
 
 /* Content box */
-.timeline-content {
+.content {
   position: relative;
   background-color: #fff;
   border-radius: 16px;
@@ -230,7 +230,7 @@ body{
   gap: 0;
 }
 
-.timeline-content:hover {
+.content:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(0,0,0,0.15);
 }
@@ -254,7 +254,7 @@ body{
   flex-direction: column;
 }
 
-.timeline-content h3 {
+.content h3 {
   font-size: 32px;
   color: white;
   margin-bottom: 15px;
@@ -262,7 +262,7 @@ body{
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
-.timeline-content h2 {
+.content h2 {
   font-size: 24px;
   color: white;
   margin-bottom: 15px;
@@ -270,7 +270,7 @@ body{
   opacity: 0.9;
 }
 
-.timeline-content > .content-left > p {
+.content > .content-left > p {
   font-size: 20px;
   color: white;
   opacity: 0.8;
@@ -314,11 +314,11 @@ body{
   cursor: pointer;
 }
 
-.timeline-content:hover .expand-indicator {
+.content:hover .expand-indicator {
   background-color: rgba(24, 77, 71, 0.2);
 }
 
-.timeline-content.expanded .expand-indicator {
+.content.expanded .expand-indicator {
   transform: rotate(180deg);
   background-color: rgba(24, 77, 71, 0.2);
 }
@@ -343,7 +343,7 @@ body{
 }
 
 /* Background Image */
-.timeline-content::before {
+.content::before {
   content: '';
   position: absolute;
   top: 0;
@@ -378,12 +378,21 @@ body{
   background-image: url('sportradar.jpg')
 }
 
-.timeline-node:hover .timeline-content::before {
+.interior-design::before {
+  background-image: url('interior-design.webp')
+}
+
+.football::before {
+  background-image: url('football.jpg')
+}
+
+
+.timeline-node:hover .content::before {
   filter: grayscale(0%);
   opacity: 0.8;
 }
 
-.timeline-content.expanded::before {
+.content.expanded::before {
   filter: grayscale(0%);
   opacity: 0.8;
 }
@@ -394,7 +403,7 @@ body{
     text-align: center;
   }
   
-  .timeline-content {
+  .content {
     grid-template-columns: 1fr;
   }
   
@@ -425,11 +434,11 @@ body{
     font-size: 20px;
   }
   
-  .timeline-content h3 {
+  .content h3 {
     font-size: 24px;
   }
   
-  .timeline-content h2 {
+  .content h2 {
     font-size: 20px;
   }
   
@@ -447,4 +456,15 @@ body{
     margin-left: 60px;
     margin-bottom: 35px
   }
+}
+
+.project-container{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.project-tile{
+  width:100%;
+  padding: 10px
 }

@@ -99,7 +99,6 @@ body{
   color: #1d1d1f;
 }
 
-/* Apply basic style to the word 'Love' */
 .love {
   font-weight: 600;
   font-family: "Libre Baskerville", serif;
@@ -107,45 +106,30 @@ body{
   white-space: nowrap;
 }
 
-/* Animate each letter independently in a wave motion */
 .love span {
   display: inline-block;
-  animation: wave 2s ease-in-out infinite; /* Apply wave animation */
+  animation: wave 2s ease-in-out infinite;
 }
 
-/* Create a wave effect with a pause at the bottom using keyframes */
 @keyframes wave {
   0%, 100% {
-    transform: translateY(0); /* Start and end at normal position (bottom) */
+    transform: translateY(0);
   }
   50% {
-    transform: translateY(-5px); /* Move up */
+    transform: translateY(-5px);
   }
   75% {
-    transform: translateY(0); /* Return to bottom position */
+    transform: translateY(0);
   }
   90% {
-    transform: translateY(0); /* Hold at the bottom */
+    transform: translateY(0);
   }
 }
 
-/* Add delays to each letter for independent animation */
-.love span:nth-child(1) {
-  animation-delay: 0s;
-}
-
-.love span:nth-child(2) {
-  animation-delay: 0.1s;
-}
-
-.love span:nth-child(3) {
-  animation-delay: 0.2s;
-}
-
-.love span:nth-child(4) {
-  animation-delay: 0.3s;
-}
-
+.love span:nth-child(1) { animation-delay: 0s; }
+.love span:nth-child(2) { animation-delay: 0.1s; }
+.love span:nth-child(3) { animation-delay: 0.2s; }
+.love span:nth-child(4) { animation-delay: 0.3s; }
 
 /* Timeline container */
 .timeline-container {
@@ -159,6 +143,26 @@ body{
   padding: 40px 0;
 }
 
+/* Section title styling */
+.section-title {
+  color: #184D47;
+  font-size: 32px;
+  font-weight: 600;
+  margin: 40px 0 20px 80px;
+  position: relative;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #184D47;
+  border-radius: 2px;
+}
+
 /* Vertical line */
 .timeline::before {
   content: '';
@@ -167,7 +171,22 @@ body{
   bottom: 0;
   left: 50px;
   width: 2px;
-  background: linear-gradient(to bottom, transparent, #184D47, transparent);
+  background: linear-gradient(to bottom, transparent, #184D47, #184D47);
+}
+
+/* Timeline sections */
+.timeline-section {
+  position: relative;
+}
+
+.timeline-section:last-child::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50px;
+  width: 2px;
+  height: 40px;
+  background: linear-gradient(to bottom, #184D47, transparent);
 }
 
 /* Individual nodes */
@@ -264,7 +283,7 @@ body{
   line-height: 1.5;
   position: relative;
   padding-left: 20px;
-  margin-bottom: 0;
+  margin-bottom: 15px;
 }
 
 .timeline-tagline::before {
@@ -277,6 +296,23 @@ body{
   background-color: #184D47;
   border-radius: 50%;
   transform: translateY(-50%);
+}
+
+/* Expand indicator */
+.expand-indicator {
+  color: #184D47;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 15px;
+  padding: 8px 16px;
+  background-color: rgba(24, 77, 71, 0.1);
+  border-radius: 20px;
+  display: inline-block;
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover .expand-indicator {
+  background-color: rgba(24, 77, 71, 0.2);
 }
 
 .details {
@@ -314,7 +350,6 @@ body{
   opacity: 0.7;
 }
 
-/* Add specific images to each timeline-content node */
 .edinburgh::before {
   background-image: url('edinburgh-skyline.jpg');
 }
@@ -335,7 +370,6 @@ body{
   background-image: url('sportradar.jpg')
 }
 
-/* Hover state */
 .timeline-node:hover .timeline-content::before {
   filter: grayscale(0%);
   opacity: 0.8;
@@ -398,5 +432,10 @@ body{
   .content-left,
   .content-right {
     padding: 25px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-left: 60px;
   }
 }

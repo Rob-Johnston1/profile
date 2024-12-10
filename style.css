@@ -301,17 +301,25 @@ body{
 /* Expand indicator */
 .expand-indicator {
   color: #184D47;
-  font-size: 14px;
-  font-weight: 500;
-  margin-top: 15px;
-  padding: 8px 16px;
+  font-size: 20px;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
   background-color: rgba(24, 77, 71, 0.1);
-  border-radius: 20px;
-  display: inline-block;
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-top: 15px;
+  cursor: pointer;
 }
 
 .timeline-content:hover .expand-indicator {
+  background-color: rgba(24, 77, 71, 0.2);
+}
+
+.timeline-content.expanded .expand-indicator {
+  transform: rotate(180deg);
   background-color: rgba(24, 77, 71, 0.2);
 }
 
@@ -437,5 +445,6 @@ body{
   .section-title {
     font-size: 28px;
     margin-left: 60px;
+    margin-bottom: 35px
   }
 }
